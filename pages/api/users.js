@@ -25,7 +25,7 @@ export default async (req, res) => {
     timings['shopsData'] = Date.now()
     
     // listDatabases(client)
-    return res.status(200).json({timings, shops})
+    return res.status(200).json({timings})
     
 
   } catch (error) {
