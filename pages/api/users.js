@@ -23,7 +23,7 @@ export default async (req, res) => {
     
     const shops = await client.db('shopify-app').collection('shops').find().toArray()
     timings['shopsData'] = Date.now()
-    
+    timings['rt'] = `${timings.startTime - timings.shopsData}ms`
     // listDatabases(client)
     console.log(req.headers)
     return res.status(200).json({timings, headers: req.headers})
